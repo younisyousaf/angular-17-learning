@@ -1,0 +1,21 @@
+<div class="container">
+  <h2>Employee List</h2>
+  <ul class="list-group">
+    <li
+      class="list-group-item d-flex justify-content-between align-items-center"
+      *ngFor="let employee of employees"
+    >
+      <div>
+        <b>Name:</b> {{ employee.name }}<br />
+        <b>Age:</b> {{ employee.age }}<br />
+        <b>Salary:</b> {{ employee.salary }}
+      </div>
+      <button class="btn btn-danger" (click)="deleteEmployee(employee.id)">
+        Delete
+      </button>
+    </li>
+  </ul>
+  <button class="btn btn-primary mt-3" (click)="employeeList()">
+    Add Employee
+  </button>
+</div>
