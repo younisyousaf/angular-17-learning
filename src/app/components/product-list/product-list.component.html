@@ -1,0 +1,13 @@
+<!-- <div class="card-product-Items">
+  {{ cartItems.length }}
+</div> -->
+<div class="cart-product-items d-flex align-items-center p-2">
+  <i class="bi bi-cart-fill me-2">Items in Cart:</i>
+  <span class="badge bg-primary">{{ cartItems.length }}</span>
+</div>
+@for(product of products; track product.id){
+<app-product-detail
+  [product]="product"
+  (addToCart)="onProductAddedToCart($event)"
+></app-product-detail>
+}

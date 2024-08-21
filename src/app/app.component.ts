@@ -8,6 +8,10 @@ import { NoEncapsulationComponent } from './components/encapsulation/no-encapsul
 import { EmulatedEncapsulationComponent } from './components/encapsulation/emulated-encapsulation/emulated-encapsulation.component';
 import { ShadowDomEncapsulationComponent } from './components/encapsulation/shadow-dom-encapsulation/shadow-dom-encapsulation.component';
 import { ChildMetaComponent } from './components/child-meta/child-meta.component';
+import { HeroComponent } from './components/hero/hero.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { SingleSlotProjectionComponent } from './components/content-projection/single-slot-projection.component';
+import { MultiSlotProjectionComponent } from './components/content-projection/multi-dlot-projection.component';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +25,10 @@ import { ChildMetaComponent } from './components/child-meta/child-meta.component
     EmulatedEncapsulationComponent,
     ShadowDomEncapsulationComponent,
     ChildMetaComponent,
+    HeroComponent,
+    ProductListComponent,
+    SingleSlotProjectionComponent,
+    MultiSlotProjectionComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

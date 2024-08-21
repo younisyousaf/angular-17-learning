@@ -1,0 +1,15 @@
+<!-- <h3>Hero Parent Component</h3>
+<app-hero-child
+  [message]="'Hello From the Hero Parent Component!'"
+></app-hero-child> -->
+<h2>{{ master }} controls {{ heroes.length }} heroes</h2>
+
+<app-hero-child
+  *ngFor="let hero of heroes"
+  [hero]="hero"
+  [master]="master"
+  (messageEvent)="receiveMessage($event)"
+>
+</app-hero-child>
+
+<h2>{{ childMessage }}</h2>

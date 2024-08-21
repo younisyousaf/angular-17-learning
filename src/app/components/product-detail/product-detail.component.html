@@ -1,0 +1,9 @@
+<div class="productDetails card">
+  <h1 class="card-title">{{ product?.name }}</h1>
+  <h2 class="card-subtitle mb-2 text-muted">{{ product?.price | currency }}</h2>
+  <p class="card-text">{{ product.description }}</p>
+
+  <div>
+    <button class="btn btn-primary" (click)="onAddToCart()">Add to Cart</button>
+  </div>
+</div>
