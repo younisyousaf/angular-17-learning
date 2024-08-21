@@ -5,8 +5,11 @@ import {
   AfterViewInit,
   Component,
   DoCheck,
+  Input,
+  OnChanges,
   OnDestroy,
   OnInit,
+  SimpleChanges,
 } from '@angular/core';
 
 @Component({
@@ -19,6 +22,7 @@ import {
 export class LifecycleEventsComponent
   implements
     OnInit,
+    OnChanges,
     DoCheck,
     AfterViewInit,
     AfterViewChecked,
@@ -34,7 +38,7 @@ export class LifecycleEventsComponent
   // ngAfterContentInitTime: string = '';
   // ngAfterContentCheckedTime: string = '';
   // ngOnDestroyTime: string = '';
-
+  childMessage: string = 'Message from Child Component';
   constructor() {
     this.constructorTime = new Date().toLocaleString('en-US', {
       hour12: false,
@@ -53,6 +57,13 @@ export class LifecycleEventsComponent
       second: '2-digit',
       fractionalSecondDigits: 3,
     });
+  }
+  @Input() name: string = '';
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(
+      `Name changed from ${changes['name'].previousValue} to ${changes['name'].currentValue}`
+    );
   }
   ngDoCheck(): void {
     console.log('ngDoCheck');
